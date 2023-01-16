@@ -16,6 +16,7 @@ $successMessage = "";
 
 $sql2 = "SELECT * FROM myclient";
 $result2 = mysqli_query($link,$sql2);
+$result5 = mysqli_query($link,$sql2);
 
 $sql3 = "SELECT * FROM mycompany_income";
 $result3 = mysqli_query($link,$sql3);
@@ -117,8 +118,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                             <?php 
                                 if ($result2){
                                     while($row2=mysqli_fetch_assoc($result2)){
-                                        $stname2 = $row2["Id_card_number"];
-                                          echo "<option>$stname2 <br></option>";
+                                        if($row2["Consumption_status"]=="正常"){
+                                            $stname2 = $row2["Id_card_number"];
+                                            echo "<option>$stname2 <br></option>";                                          
+                                        }
                                     }
                                 }
                             ?>

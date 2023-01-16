@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     <link rel="shortcut" type="text/css" href="print.css">
     <title>資料庫系統</title>
 </head>
-
+  
 <body>
     <section class="header">
         <div class="logo">

@@ -106,7 +106,7 @@ if ($result->num_rows > 0) {
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> 
         <div class="main--content">
             <div class="recent--patients">
                 <div class="title">
@@ -145,7 +145,9 @@ if ($result->num_rows > 0) {
                                 <td><?php echo $user['Supplier_number']; ?></td>
                                 <td><?php echo $user['Expected_delivery_date']; ?></td>
                                 <td><?php echo $user['Actual_delivery_date']; ?></td>
-                                <td><?php echo "<a class='ri-feedback-line delete' href='./2_return.php?ID=$user[ID]'></a>$user[consume]</a> 
+                                <td><?php echo "
+                                <a class='ri-edit-line edit' href='./2_Edit.php?ID=$user[ID]' ></a> 
+                                <a class='ri-feedback-line delete' href='./2_return.php?ID=$user[ID]'></a>$user[consume]</a> 
                                     ";?>
                                 </td>
                             </tr>

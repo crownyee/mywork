@@ -120,7 +120,7 @@ if ($result->num_rows > 0) {
                     <thead>
                     <th>供應商名稱</th>
                     <th>供應商編號</th>
-                    <th>負責人</th>
+                    <th>負責人</th> 
                     <th>品名</th>
                     <th>貨源</th>
                     <th>品級</th>

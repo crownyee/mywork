@@ -124,7 +124,7 @@ if ($result->num_rows > 0) {
                     <th>應收金額</th>
                     <th>應收日期</th>
                     <th>待催收金額</th>
-                    <th>修正功能</th>
+                    <th>修正功能</th> 
                     </thead>
                     <tbody>
                     <?php if(!empty($arr_users)) { ?>

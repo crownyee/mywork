@@ -7,6 +7,8 @@ $consume = "";
 $Id_card_number = "";
 $errorMessage = "";
 $successMessage = "";
+$Price = "";
+$Quantity = ""; 
 
 $sql2 = "SELECT * FROM mycompany_income";
 $result2 = mysqli_query($link,$sql2);
@@ -34,21 +36,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $Id_card_number = $row["Id_card_number"];
     $Order_name = $row["Order_name"];
     $consume = $row["consume"];
-    
+    $Price = $row["Price"];
+    $Quantity = $row["Quantity"]; 
 }
 else{
 
     $Id_card_number = $_POST["Id_card_number"];
     $Order_name = $_POST["Order_name"];
     $consume = $_POST["consume"];
+    $Price = $_POST["Price"];
+    $Quantity = $_POST["Quantity"]; 
     
     do{
-        if (empty($Order_name) || empty($consume)){
+        if (empty($Order_name) || empty($consume) ||empty($Price) ||empty($Quantity)){
             $errorMessage = "每一個欄位都必須填";
             break;
         }
 
-        $sql =  "UPDATE myorder_history SET Order_name = '$Order_name', consume='$consume' WHERE ID=$ID;";
+        $sql =  "UPDATE myorder_history SET Order_name = '$Order_name', consume='$consume', Price='$Price', 
+                Quantity=$Quantity WHERE ID=$ID;";
 
         $result = mysqli_query($link, $sql);
 
@@ -97,11 +103,11 @@ else{
         }
         ?>
 
-        <h2>編輯客戶資料</h2>
+        <h2>編輯訂單資料</h2>
         <form method = "post">
             <input type="hidden" name="ID" value="<?php echo $ID; ?>">
             <div class="row mb=3">
-                <label class="col-sm-3 col-form-label">訂單品名</label>
+                <label class="col-sm-3 col-form-label">身分證字號</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name=Id_card_number value="<?php echo $Id_card_number; ?>" readonly="true">
                 </div>  
@@ -126,6 +132,20 @@ else{
                     </select>
                 </div>
             </div>
+            
+            <div class="row mb=3">
+                <label class="col-sm-3 col-form-label">數量</label> 
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name=Quantity value="<?php echo $Quantity; ?>">
+                </div>
+            </div>
+            <div class="row mb=3">
+                <label class="col-sm-3 col-form-label">單價</label> 
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name=Price value="<?php echo $Price; ?>">
+                </div>
+            </div>
+
             <div class="row mb=3">
                 <label class="col-sm-3 col-form-label">退貨價錢</label> 
                 <div class="col-sm-6">

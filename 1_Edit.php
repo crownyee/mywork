@@ -1,6 +1,6 @@
 <?php
 require_once './connection.php';
-
+ 
 $Id_card_number = $_GET["Id_card_number"];
 $Client_name = "";
 $Telephone_number = "";

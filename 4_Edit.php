@@ -103,7 +103,7 @@ else{
         }
         ?>
 
-        <h2>編輯客戶資料</h2>
+        <h2>編輯收帳資料</h2>
         <form method = "post">
 
         <div class="row mb=3">

@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
         ?>
 
-        <h2>新增客戶資料</h2>
+        <h2>新增收帳資料</h2>
         <form method = "post">
 
             <div class="row mb=3">
